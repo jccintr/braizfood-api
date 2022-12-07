@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TenantcategoriaController;
 use App\Http\Controllers\TenantController;
+use App\Http\Controllers\IngredienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,7 @@ Route::post('/tenantcategorias', [TenantcategoriaController::class, 'add']);
 Route::get('/tenant/{id}', [TenantController::class, 'getById']);
 Route::get('/tenants', [TenantController::class, 'list']);
 Route::post('/tenants', [TenantController::class, 'add']);
+// Ingrediente Controller ====================================================
+Route::post('/ingredientes', [IngredienteController::class, 'add']);
+Route::get('/ingredientes/tenant/{idTenant}', [IngredienteController::class, 'getByTenant']);
+Route::post('/ingrediente/{id}', [IngredienteController::class, 'update']);
