@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ingredientes', function (Blueprint $table) {
+        Schema::create('tipos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tenant_id');
             $table->string('nome');
+            $table->string('imagem')->nullable();
             $table->timestamps();
-            // cria o relacionamento com a tabela tenants
-            $table->foreign('tenant_id')->references('id')->on('tenants');
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ingredientes');
+        Schema::dropIfExists('tipos');
     }
 };

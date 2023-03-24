@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+/*
 // Tenantcategoria Controller ====================================================
 Route::get('/tenantcategoria/{id}', [TenantcategoriaController::class, 'getById']);
 Route::get('/tenantcategorias', [TenantcategoriaController::class, 'list']);
@@ -34,3 +34,16 @@ Route::post('/tenants', [TenantController::class, 'add']);
 Route::post('/ingredientes', [IngredienteController::class, 'add']);
 Route::get('/ingredientes/tenant/{idTenant}', [IngredienteController::class, 'getByTenant']);
 Route::post('/ingrediente/{id}', [IngredienteController::class, 'update']);
+
+*/
+// Cidade Controller
+
+//Lojas Controller
+
+// Categorias Controller
+
+//Taxas Controller
+
+//Pagamentos Controller
+
+//Atendimento Controller

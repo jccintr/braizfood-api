@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        
+        Schema::create('cidades', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->string('uf');
+            $table->string('imagem')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-       
+        Schema::dropIfExists('cidades');
     }
 };
