@@ -52,7 +52,7 @@ class CidadeController extends Controller
                 $cidade->estado = $novoEstado;
                 if($novaImagem){
                     if($cidade->imagem){
-                        Storage::disk('public')->delete($cidade->avatar);
+                        Storage::disk('public')->delete($cidade->imagem);
                      }
                      $imagem_url = $novaImagem->store('imagens/cidades','public');
                      $cidade->imagem = $imagem_url;
@@ -65,9 +65,6 @@ class CidadeController extends Controller
         } else {
             return response()->json(['erro'=>'Cidade não encontrada.'],404);
         }
-
-
-  
-      
     }
+
 }

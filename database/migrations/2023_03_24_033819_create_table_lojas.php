@@ -30,10 +30,10 @@ return new class extends Migration
             $table->string('email');
             $table->string('contato');
             $table->timestamps();
-             // cria o relacionamento com a tabela tipos
-             $table->foreign('tipo_id')->references('id')->on('tipos');
-              // cria o relacionamento com a tabela cidades
-              $table->foreign('cidade_id')->references('id')->on('cidades');
+            // cria o relacionamento com a tabela tipos
+            $table->foreign('tipo_id')->references('id')->on('tipos');
+            // cria o relacionamento com a tabela cidades
+            $table->foreign('cidade_id')->references('id')->on('cidades');
         });
     }
 

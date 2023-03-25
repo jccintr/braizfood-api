@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CidadeController;
+use App\Http\Controllers\TipoController;
+use App\Http\Controllers\LojaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,27 +21,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/*
-// Tenantcategoria Controller ====================================================
-Route::get('/tenantcategoria/{id}', [TenantcategoriaController::class, 'getById']);
-Route::get('/tenantcategorias', [TenantcategoriaController::class, 'list']);
-Route::post('/tenantcategorias', [TenantcategoriaController::class, 'add']);
-// Tenant Controller ====================================================
-Route::get('/tenant/{id}', [TenantController::class, 'getById']);
-Route::get('/tenants', [TenantController::class, 'list']);
-Route::post('/tenants', [TenantController::class, 'add']);
-// Ingrediente Controller ====================================================
-Route::post('/ingredientes', [IngredienteController::class, 'add']);
-Route::get('/ingredientes/tenant/{idTenant}', [IngredienteController::class, 'getByTenant']);
-Route::post('/ingrediente/{id}', [IngredienteController::class, 'update']);
-
-*/
 // Cidades
 Route::get('/cidades', [CidadeController::class, 'index']);
 Route::post('/cidades', [CidadeController::class, 'store']);
 Route::post('/cidades/{id}', [CidadeController::class, 'update']);
-//Lojas Controller
-
+// Tipos
+Route::get('/tipos', [TipoController::class, 'index']);
+Route::post('/tipos', [TipoController::class, 'store']);
+Route::post('/tipos/{id}', [TipoController::class, 'update']);
+// Lojas
+Route::get('/lojas', [LojaController::class, 'index']);
+Route::post('/lojas', [LojaController::class, 'store']);
+Route::post('/lojas/{id}', [LojaController::class, 'update']);
 // Categorias Controller
 
 //Taxas Controller
