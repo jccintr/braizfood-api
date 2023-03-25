@@ -2,9 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TenantcategoriaController;
-use App\Http\Controllers\TenantController;
-use App\Http\Controllers\IngredienteController;
+use App\Http\Controllers\CidadeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +34,10 @@ Route::get('/ingredientes/tenant/{idTenant}', [IngredienteController::class, 'ge
 Route::post('/ingrediente/{id}', [IngredienteController::class, 'update']);
 
 */
-// Cidade Controller
-
+// Cidades
+Route::get('/cidades', [CidadeController::class, 'index']);
+Route::post('/cidades', [CidadeController::class, 'store']);
+Route::post('/cidades/{id}', [CidadeController::class, 'update']);
 //Lojas Controller
 
 // Categorias Controller

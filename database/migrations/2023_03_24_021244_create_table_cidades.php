@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('cidades', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('uf');
+            $table->string('estado');
             $table->string('imagem')->nullable();
             $table->timestamps();
         });
