@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\LojaController;
+use App\Http\Controllers\TaxaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,10 @@ Route::post('/tipos/{id}', [TipoController::class, 'update']);
 Route::get('/lojas', [LojaController::class, 'index']);
 Route::post('/lojas', [LojaController::class, 'store']);
 Route::post('/lojas/{id}', [LojaController::class, 'update']);
+// Taxas 
+Route::get('/taxas', [TaxaController::class, 'index']);
+Route::post('/taxas', [TaxaController::class, 'store']);
+Route::post('/taxas/{id}', [TaxaController::class, 'update']);
 // Categorias Controller
 
 //Taxas Controller

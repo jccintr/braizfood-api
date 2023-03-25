@@ -9,4 +9,5 @@ class Taxa extends Model
 {
     use HasFactory;
     protected $table = 'taxas';
+    protected $fillable = ['loja_id','bairro','valor'];
 }
