@@ -9,4 +9,5 @@ class Atendimento extends Model
 {
     use HasFactory;
     protected $table = 'atendimentos';
+    protected $fillable = ['loja_id','dia','horario'];
 }
