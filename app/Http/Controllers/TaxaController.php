@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Taxa;
-use Illuminate\Support\Facades\Storage;
+
 
 class TaxaController extends Controller
 {

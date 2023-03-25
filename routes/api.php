@@ -6,6 +6,7 @@ use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\LojaController;
 use App\Http\Controllers\TaxaController;
+use App\Http\Controllers\PagamentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,10 @@ Route::post('/lojas/{id}', [LojaController::class, 'update']);
 Route::get('/taxas', [TaxaController::class, 'index']);
 Route::post('/taxas', [TaxaController::class, 'store']);
 Route::post('/taxas/{id}', [TaxaController::class, 'update']);
+// Pagamentos
+Route::get('/pagamentos', [PagamentoController::class, 'index']);
+Route::post('/pagamentos', [PagamentoController::class, 'store']);
+Route::post('/pagamentos/{id}', [PagamentoController::class, 'update']);
 // Categorias Controller
 
 //Taxas Controller
