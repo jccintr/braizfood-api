@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('ativo')->default(true);
             $table->boolean('aberto')->default(false);
             $table->string('nome');
+            $table->string('ramo_atividade');
             $table->string('logotipo')->nullable();
             $table->string('cor_fundo');
             $table->string('cor_texto');
@@ -29,6 +30,7 @@ return new class extends Migration
             $table->string('bairro');
             $table->string('email');
             $table->string('contato');
+            $table->float('stars')->default(0);
             $table->timestamps();
             // cria o relacionamento com a tabela tipos
             $table->foreign('tipo_id')->references('id')->on('tipos');
