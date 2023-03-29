@@ -72,7 +72,7 @@ class LojasSeeder extends Seeder
             'cidade_id' => 1,
             'ativo' => true,
             'aberto' => true,
-            'nome' => "Chiken Premium",
+            'nome' => "Chicken Premium",
             'ramo_atividade' => 'Restaurante',
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',

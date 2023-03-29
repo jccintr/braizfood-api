@@ -21,7 +21,7 @@ class CidadeController extends Controller
         $cidade = Cidade::find($id);
         
         if ($cidade){
-            $lojas = Loja::where('cidade_id', $cidade->id)->get();
+            $lojas = Loja::where('cidade_id', $cidade->id)->orderBy('aberto','desc')->orderBy('nome')->get();
             $cidade['lojas'] = $lojas;
            
             return response()->json($cidade,200);
