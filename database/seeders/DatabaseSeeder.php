@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             CidadesSeeder::class,
-            TiposSeeder::class
+            TiposSeeder::class,
+            LojasSeeder::class
             
             
     ]);

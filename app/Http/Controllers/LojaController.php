@@ -31,6 +31,7 @@ class LojaController extends Controller
         $email = $request->email;
         $contato = $request->contato;
         $ramo_atividade = $request->ramo_atividade;
+        $tempo = $request->tempo;
 
         if ($tipo_id and $cidade_id and $nome) {
             $loja = new Loja();
@@ -47,6 +48,7 @@ class LojaController extends Controller
             $loja->email = $email;
             $loja->contato = $contato;
             $loja->ramo_atividade = $ramo_atividade;
+            $loja->tempo = $tempo;
             if($logotipo){
                 $logotipo_url = $logotipo->store('imagens/lojas','public');
                 $loja->logotipo = $logotipo_url;
@@ -85,7 +87,7 @@ class LojaController extends Controller
             $email = $request->email;
             $contato = $request->contato;
             $ramo_atividade = $request->ramo_atividade;
-                    
+            $tempo = $request->tempo;    
            
             if ($tipo_id and $cidade_id and $nome) {
                 $loja->tipo_id = $tipo_id;
@@ -101,6 +103,7 @@ class LojaController extends Controller
                 $loja->email = $email;
                 $loja->contato = $contato;
                 $loja->ramo_atividade = $ramo_atividade;
+                $loja->tempo = $tempo;
                 if($logotipo){
                     if($loja->logotipo){
                         Storage::disk('public')->delete($loja->logotipo);

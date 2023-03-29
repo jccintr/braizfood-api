@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cidade;
+use App\Models\Loja;
 use Illuminate\Support\Facades\Storage;
 
 class CidadeController extends Controller
@@ -14,6 +15,22 @@ class CidadeController extends Controller
         $cidades = Cidade::orderBy('nome')->get();
         return response()->json($cidades->values()->all(),200);
     }
+
+    public function show($id)
+    {
+        $cidade = Cidade::find($id);
+        
+        if ($cidade){
+            $lojas = Loja::where('cidade_id', $cidade->id)->get();
+            $cidade['lojas'] = $lojas;
+           
+            return response()->json($cidade,200);
+        } else {
+            return response()->json(['erro'=>'Cidade não encontrada.'],404);
+        }
+    }
+  
+
 
     public function store(Request $request)
     {

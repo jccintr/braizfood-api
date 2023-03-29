@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Cidades
 Route::get('/cidades', [CidadeController::class, 'index']);
+Route::get('/cidades/{id}', [CidadeController::class, 'show']);
 Route::post('/cidades', [CidadeController::class, 'store']);
 Route::post('/cidades/{id}', [CidadeController::class, 'update']);
 // Tipos

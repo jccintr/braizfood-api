@@ -25,12 +25,13 @@ return new class extends Migration
             $table->string('cor_fundo');
             $table->string('cor_texto');
             $table->string('cover')->nullable();
-            $table->string('telefone');
-            $table->string('endereco');
-            $table->string('bairro');
-            $table->string('email');
-            $table->string('contato');
-            $table->float('stars')->default(0);
+            $table->string('telefone')->nullable();
+            $table->string('endereco')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('email')->nullable();
+            $table->string('contato')->nullable();
+            $table->float('stars')->default(4.5);
+            $table->string('tempo')->nullable();
             $table->timestamps();
             // cria o relacionamento com a tabela tipos
             $table->foreign('tipo_id')->references('id')->on('tipos');
