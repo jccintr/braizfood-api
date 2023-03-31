@@ -20,11 +20,12 @@ class LojasSeeder extends Seeder
             'cidade_id' => 1,
             'ativo' => true,
             'aberto' => true,
-            'nome' => "Burguer King",
+            'nome' => "Burger King",
             'ramo_atividade' => 'Restaurante',
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/bk.png",
+            'cover' => "imagens/lojas/covers/bk.png",
             'tempo' => '30-40min', 
         ]);
 
@@ -38,6 +39,7 @@ class LojasSeeder extends Seeder
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/mcdonalds.png",
+            'cover' => "imagens/lojas/covers/mcdonalds.png",
             'tempo' => '40-60min', 
         ]);
 
@@ -64,6 +66,7 @@ class LojasSeeder extends Seeder
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/pastelaria-do-teko.jpg",
+            'cover' => "imagens/lojas/covers/pastel.png",
             'tempo' => '10-20min', 
         ]);
 
@@ -77,6 +80,7 @@ class LojasSeeder extends Seeder
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/chicken.png",
+            'cover' => "imagens/lojas/covers/frango.png",
             'tempo' => '15-30min', 
         ]);
 
@@ -116,6 +120,7 @@ class LojasSeeder extends Seeder
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/pizza-delivery.png",
+            'cover' => "imagens/lojas/covers/pizza.png",
             'tempo' => '15-30min', 
         ]);
 
@@ -124,11 +129,12 @@ class LojasSeeder extends Seeder
             'cidade_id' => 1,
             'ativo' => true,
             'aberto' => true,
-            'nome' => "Burguer Shop",
+            'nome' => "Burger Shop",
             'ramo_atividade' => 'Hamburgueria',
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/burger-shop.png",
+            'cover' => "imagens/lojas/covers/burger3.png",
             'tempo' => '15-30min', 
         ]);
 
@@ -137,11 +143,12 @@ class LojasSeeder extends Seeder
             'cidade_id' => 1,
             'ativo' => true,
             'aberto' => true,
-            'nome' => "Big Burguers",
+            'nome' => "Big Burgers",
             'ramo_atividade' => 'Hamburgueria',
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/big-burguers.png",
+            'cover' => "imagens/lojas/covers/burger1.png",
             'tempo' => '15-30min', 
         ]);
 
@@ -155,22 +162,9 @@ class LojasSeeder extends Seeder
             'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/burger-house.png",
+            'cover' => "imagens/lojas/covers/burger2.png",
             'tempo' => '15-30min', 
         ]);
     }
 }
 
-/*
- 
-            $table->string('logotipo')->nullable();
-            $table->string('cor_fundo');
-            $table->string('cor_texto');
-            $table->string('cover')->nullable();
-            $table->string('telefone');
-            $table->string('endereco');
-            $table->string('bairro');
-            $table->string('email');
-            $table->string('contato');
-            $table->float('stars')->default(4.5);
-            $table->string('tempo');
-*/
