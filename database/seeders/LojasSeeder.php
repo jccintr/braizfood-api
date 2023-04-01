@@ -15,7 +15,7 @@ class LojasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('lojas')->insert([
+      DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
             'ativo' => true,
@@ -28,7 +28,8 @@ class LojasSeeder extends Seeder
             'cover' => "imagens/lojas/covers/bk.png",
             'tempo' => '30-40min', 
         ]);
-
+       
+//=================================================================
         DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
@@ -42,6 +43,7 @@ class LojasSeeder extends Seeder
             'cover' => "imagens/lojas/covers/mcdonalds.png",
             'tempo' => '40-60min', 
         ]);
+//=================================================================
 
         DB::table('lojas')->insert([
             'tipo_id' => 1,
@@ -55,7 +57,7 @@ class LojasSeeder extends Seeder
             'logotipo' => "imagens/lojas/logotipos/paladar.png",
             'tempo' => '15-30min', 
         ]);
-
+//=================================================================
         DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
@@ -69,7 +71,7 @@ class LojasSeeder extends Seeder
             'cover' => "imagens/lojas/covers/pastel.png",
             'tempo' => '10-20min', 
         ]);
-
+//=================================================================
         DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
@@ -83,7 +85,7 @@ class LojasSeeder extends Seeder
             'cover' => "imagens/lojas/covers/frango.png",
             'tempo' => '15-30min', 
         ]);
-
+//=================================================================
         DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
@@ -96,7 +98,7 @@ class LojasSeeder extends Seeder
             'logotipo' => "imagens/lojas/logotipos/adega-piloto.png",
             'tempo' => '15-30min', 
         ]);
-
+//=================================================================
         DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
@@ -109,7 +111,7 @@ class LojasSeeder extends Seeder
             'logotipo' => "imagens/lojas/logotipos/mundo-burguer.png",
             'tempo' => '15-30min', 
         ]);
-
+//=================================================================
         DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
@@ -123,7 +125,7 @@ class LojasSeeder extends Seeder
             'cover' => "imagens/lojas/covers/pizza.png",
             'tempo' => '15-30min', 
         ]);
-
+//=================================================================
         DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
@@ -137,7 +139,7 @@ class LojasSeeder extends Seeder
             'cover' => "imagens/lojas/covers/burger3.png",
             'tempo' => '15-30min', 
         ]);
-
+//=================================================================
         DB::table('lojas')->insert([
             'tipo_id' => 1,
             'cidade_id' => 1,
@@ -151,8 +153,8 @@ class LojasSeeder extends Seeder
             'cover' => "imagens/lojas/covers/burger1.png",
             'tempo' => '15-30min', 
         ]);
-
-        DB::table('lojas')->insert([
+//=================================================================
+       $lastLojaId = DB::table('lojas')->insertGetid([
             'tipo_id' => 1,
             'cidade_id' => 1,
             'ativo' => true,
@@ -165,6 +167,101 @@ class LojasSeeder extends Seeder
             'cover' => "imagens/lojas/covers/burger2.png",
             'tempo' => '15-30min', 
         ]);
+        // loop para inserir pagamentos, taxas e atendimentos
+        for ($i=1;$i<=$lastLojaId;$i++){
+
+           // insere as taxas de entrega
+        DB::table('taxas')->insert([
+            'loja_id' => $i,
+            'bairro' => 'Centro',
+            'valor' => 3.00,
+        ]);
+        DB::table('taxas')->insert([
+            'loja_id' => $i,
+            'bairro' => 'Varginha',
+            'valor' => 3.50,
+        ]);
+        DB::table('taxas')->insert([
+            'loja_id' => $i,
+            'bairro' => 'Medicina',
+            'valor' => 3.00,
+        ]);
+        DB::table('taxas')->insert([
+            'loja_id' => $i,
+            'bairro' => 'Santa rosa',
+            'valor' => 6.00,
+        ]);
+        DB::table('taxas')->insert([
+            'loja_id' => $i,
+            'bairro' => 'Rebourgeon',
+            'valor' => 8.00,
+        ]);
+        //insere as formas de pagamento
+        DB::table('pagamentos')->insert([
+            'loja_id' => $i,
+            'nome' => 'Dinheiro',
+        ]);
+        DB::table('pagamentos')->insert([
+            'loja_id' => $i,
+            'nome' => 'Pix',
+        ]);
+        DB::table('pagamentos')->insert([
+            'loja_id' => $i,
+            'nome' => 'Cartão de Débito',
+        ]);
+        DB::table('pagamentos')->insert([
+            'loja_id' => $i,
+            'nome' => 'Cartão de Crédito',
+        ]);
+        DB::table('pagamentos')->insert([
+            'loja_id' => $i,
+            'nome' => 'PicPay',
+        ]);
+        // insere os horarios de atendimento
+        DB::table('atendimentos')->insert([
+            'loja_id' => $i,
+            'dia' => 0,
+            'horario' => '13h as 23h'
+        ]);
+        DB::table('atendimentos')->insert([
+            'loja_id' => $i,
+            'dia' => 1,
+            'horario' => 'Fechado'
+        ]);
+        DB::table('atendimentos')->insert([
+            'loja_id' => $i,
+            'dia' => 2,
+            'horario' => '18h as 23h'
+        ]);
+        DB::table('atendimentos')->insert([
+            'loja_id' => $i,
+            'dia' => 3,
+            'horario' => '18h as 23h'
+        ]);
+        DB::table('atendimentos')->insert([
+            'loja_id' => $i,
+            'dia' => 4,
+            'horario' => '16h as 23h'
+        ]);
+        DB::table('atendimentos')->insert([
+            'loja_id' => $i,
+            'dia' => 5,
+            'horario' => '14h as 22h'
+        ]);
+        DB::table('atendimentos')->insert([
+            'loja_id' => $i,
+            'dia' => 6,
+            'horario' => '18h as 24h'
+        ]);
+        DB::table('atendimentos')->insert([
+            'loja_id' => $i,
+            'dia' => 7,
+            'horario' => '18h as 24h'
+        ]);
+
+
+
+        }
     }
 }
 
