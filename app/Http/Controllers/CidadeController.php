@@ -6,6 +6,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cidade;
 use App\Models\Loja;
+use App\Models\Taxa;
+use App\Models\Pagamento;
+use App\Models\Atendimento;
 use Illuminate\Support\Facades\Storage;
 
 class CidadeController extends Controller
@@ -22,6 +25,14 @@ class CidadeController extends Controller
         
         if ($cidade){
             $lojas = Loja::where('cidade_id', $cidade->id)->orderBy('aberto','desc')->orderBy('nome')->get();
+            foreach($lojas as $loja){
+               $taxas = Taxa::where('loja_id',$loja->id)->get();
+               $loja['taxas'] = $taxas;
+               $pagamentos = Pagamento::where('loja_id',$loja->id)->get();
+               $loja['pagamentos'] = $pagamentos;
+               $atendimentos = Atendimento::where('loja_id',$loja->id)->get();
+               $loja['atendimentos'] = $atendimentos;
+            }
             $cidade['lojas'] = $lojas;
            
             return response()->json($cidade,200);
