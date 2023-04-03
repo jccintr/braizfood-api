@@ -22,7 +22,7 @@ class LojasSeeder extends Seeder
             'aberto' => true,
             'nome' => "Burger King",
             'ramo_atividade' => 'Restaurante',
-            'cor_fundo' => '#ff0000',
+            //'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/bk.png",
             'cover' => "imagens/lojas/covers/bk.png",
@@ -37,7 +37,7 @@ class LojasSeeder extends Seeder
             'aberto' => true,
             'nome' => "McDonalds",
             'ramo_atividade' => 'Restaurante',
-            'cor_fundo' => '#ff0000',
+            //'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/mcdonalds.png",
             'cover' => "imagens/lojas/covers/mcdonalds.png",
@@ -52,7 +52,7 @@ class LojasSeeder extends Seeder
             'aberto' => true,
             'nome' => "Lanchonete Paladar",
             'ramo_atividade' => 'Lanchonete',
-            'cor_fundo' => '#ff0000',
+            'cor_fundo' => '#f6a800',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/paladar.png",
             'tempo' => '15-30min', 
@@ -65,7 +65,7 @@ class LojasSeeder extends Seeder
             'aberto' => true,
             'nome' => "Pastelaria do Teko",
             'ramo_atividade' => 'Pastelaria',
-            'cor_fundo' => '#ff0000',
+            //'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/pastelaria-do-teko.jpg",
             'cover' => "imagens/lojas/covers/pastel.png",
@@ -79,7 +79,7 @@ class LojasSeeder extends Seeder
             'aberto' => true,
             'nome' => "Chicken Premium",
             'ramo_atividade' => 'Restaurante',
-            'cor_fundo' => '#ff0000',
+            //'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/chicken.png",
             'cover' => "imagens/lojas/covers/frango.png",
@@ -93,7 +93,7 @@ class LojasSeeder extends Seeder
             'aberto' => false,
             'nome' => "Adega Piloto",
             'ramo_atividade' => 'Bebidas',
-            'cor_fundo' => '#ff0000',
+            'cor_fundo' => '#f8b240',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/adega-piloto.png",
             'tempo' => '15-30min', 
@@ -106,7 +106,7 @@ class LojasSeeder extends Seeder
             'aberto' => true,
             'nome' => "Mundo Burguer",
             'ramo_atividade' => 'Hamburgueria',
-            'cor_fundo' => '#ff0000',
+            'cor_fundo' => '#282828',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/mundo-burguer.png",
             'tempo' => '15-30min', 
@@ -119,7 +119,7 @@ class LojasSeeder extends Seeder
             'aberto' => false,
             'nome' => "Pizza Delivery",
             'ramo_atividade' => 'Pizzaria',
-            'cor_fundo' => '#ff0000',
+            //'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/pizza-delivery.png",
             'cover' => "imagens/lojas/covers/pizza.png",
@@ -133,7 +133,7 @@ class LojasSeeder extends Seeder
             'aberto' => true,
             'nome' => "Burger Shop",
             'ramo_atividade' => 'Hamburgueria',
-            'cor_fundo' => '#ff0000',
+            //'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/burger-shop.png",
             'cover' => "imagens/lojas/covers/burger3.png",
@@ -147,7 +147,7 @@ class LojasSeeder extends Seeder
             'aberto' => true,
             'nome' => "Big Burgers",
             'ramo_atividade' => 'Hamburgueria',
-            'cor_fundo' => '#ff0000',
+            //'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/big-burguers.png",
             'cover' => "imagens/lojas/covers/burger1.png",
@@ -161,7 +161,7 @@ class LojasSeeder extends Seeder
             'aberto' => false,
             'nome' => "Burger House",
             'ramo_atividade' => 'Hamburgueria',
-            'cor_fundo' => '#ff0000',
+            //'cor_fundo' => '#ff0000',
             'cor_texto' => '#000000',
             'logotipo' => "imagens/lojas/logotipos/burger-house.png",
             'cover' => "imagens/lojas/covers/burger2.png",
@@ -253,13 +253,7 @@ class LojasSeeder extends Seeder
             'dia' => 6,
             'horario' => '18h as 24h'
         ]);
-        DB::table('atendimentos')->insert([
-            'loja_id' => $i,
-            'dia' => 7,
-            'horario' => '18h as 24h'
-        ]);
-
-
+       
 
         }
     }

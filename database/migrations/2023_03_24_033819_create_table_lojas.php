@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('ramo_atividade');
             $table->string('logotipo')->nullable();
-            $table->string('cor_fundo');
-            $table->string('cor_texto');
+            $table->string('cor_fundo')->nullable();
+            $table->string('cor_texto')->nullable();
             $table->string('cover')->nullable();
             $table->string('telefone')->nullable();
             $table->string('endereco')->nullable();
