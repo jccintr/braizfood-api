@@ -10,4 +10,8 @@ class Tipo extends Model
     use HasFactory;
     protected $fillable = ['nome','imagem'];
     protected $table = 'tipos';
+
+    public function lojas(){
+        return $this->hasmany(Loja::class);
+    }
 }

@@ -15,7 +15,7 @@ class CidadeController extends Controller
 {
     public function index()
     {
-        $cidades = Cidade::orderBy('nome')->get();
+        $cidades = Cidade::orderBy('nome')->with('lojas')->get();
         return response()->json($cidades->values()->all(),200);
     }
 

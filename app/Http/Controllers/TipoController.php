@@ -10,7 +10,7 @@ class TipoController extends Controller
 {
     public function index()
     {
-        $tipos = Tipo::orderBy('nome')->get();
+        $tipos = Tipo::orderBy('nome')->with('lojas')->get();
         return response()->json($tipos->values()->all(),200);
     }
 

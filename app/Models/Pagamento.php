@@ -10,4 +10,8 @@ class Pagamento extends Model
     use HasFactory;
     protected $table = 'pagamentos';
     protected $fillable = ['loja_id','nome'];
+
+    public function lojas(){
+        return $this->belongsTo(Loja::class);
+    }
 }

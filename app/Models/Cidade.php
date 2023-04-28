@@ -10,4 +10,8 @@ class Cidade extends Model
     use HasFactory;
     protected $fillable = ['nome','estado','imagem'];
     protected $table = 'cidades';
+
+    public function lojas(){
+        return $this->hasmany(Loja::class);
+    }
 }
